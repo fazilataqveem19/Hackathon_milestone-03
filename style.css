@@ -1,153 +1,238 @@
-/* Initially, the CV form is visible, and the CV template is hidden */
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Global Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f7fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h3 {
+    font-weight: 700;
+    color: #2C3E50;
+}
+
+p {
+    color: #7F8C8D;
+    font-size: 1rem;
+}
+
+/* Form Section */
 #cv-form {
-    display: block;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: 30px;
 }
 
+#cv-form h1 {
+    font-size: 2.5rem;
+    color: #2980b9;
+}
+
+#cv-form p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #2C3E50;
+}
+
+.form-control {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #D3D3D3;
+    box-shadow: none;
+}
+
+.form-control:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+.btn-primary {
+    background-color: #3498db;
+    border-color: #3498db;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+}
+
+.btn-sm {
+    font-size: 0.8rem;
+    padding: 6px 15px;
+}
+
+/* CV Template Styling */
 #cv-template {
-    display: none;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Profile image */
+.background {
+    background-color: #2C3E50;
+    color: white;
+}
+
 .myimg {
     border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border: 5px solid #007bff; /* Add a border for a pop effect */
-    transition: transform 0.3s ease-in-out;
+    margin-bottom: 20px;
+    width: 150px; 
+    height: 150px; 
+    object-fit: cover; 
 }
 
-.myimg:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
+#cv-template h1 {
+    font-size: 2.5rem;
+    color: #2980b9;
+    text-align: center;
 }
 
-/* Background styling */
-.background {
-    background: linear-gradient(135deg, #f0f8ff, #e0f7fa, #b9fbc0);
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-size: 300% 300%; /* For animation effect */
-    animation: gradientAnimation 10s ease infinite; /* Animate gradient */
+.card {
+    border: none;
+    margin-bottom: 20px;
+    border-radius: 10px;
 }
 
-/* Gradient animation */
-@keyframes gradientAnimation {
-    0% { background-position: 0% 0%; }
-    50% { background-position: 100% 100%; }
-    100% { background-position: 0% 0%; }
-}
-
-/* Typography */
-h1, h2, h3, p {
-    font-family: 'Poppins', sans-serif;
-    color: #333;
-    font-weight: bold; /* Make all text bold */
-}
-
-/* Remove default list styling */
-ul {
-    list-style-type: none;
-    padding-left: 0;
-    animation: ulFadeIn 1s ease-in-out; /* Animate ul */
-}
-
-/* List item styling */
-li {
-    margin-bottom: 10px;
+.card-header {
+    background-color: #2980b9;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.2rem;
     padding: 10px;
-    border-left: 4px solid #007bff; /* Add color accent */
-    background-color: #f9f9f9; /* Light grey background */
-    font-weight: bold; /* Make list items bold */
-    transition: background-color 0.3s ease, border-left-color 0.3s ease;
-    animation: liSlideIn 0.5s ease-out; /* Animate li */
+    border-radius: 10px 10px 0 0;
 }
 
-/* List item hover effect */
-li:hover {
-    background-color: #e0f7fa; /* Light blue background on hover */
-    border-left-color: #004d40; /* Darker accent color on hover */
-}
-
-/* Container for CV content */
-.cv-container {
-    margin: 20px;
+.card-body {
+    background-color: #f8f9fa;
     padding: 20px;
-    border: 2px solid #007bff;
-    border-radius: 15px;
-    background-color: #ffffff;
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease-in-out;
+    border-radius: 0 0 10px 10px;
 }
 
-.cv-container:hover {
-    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+/* Custom bullet points for sections */
+#weT, #aqT, #skillsT {
+    list-style: none; 
+    padding-left: 0;
+    color: #2C3E50;
 }
 
-/* Button styles */
+#weT li, #aqT li, #skillsT li {
+    padding: 5px 0;
+    border-bottom: 1px solid #D3D3D3; 
+    display: flex;
+    align-items: center;
+}
+
+#weT li::before, #aqT li::before, #skillsT li::before {
+    content: '•'; 
+    font-size: 1.5rem;
+    color: #2980b9;
+    margin-right: 10px;
+}
+
+/* Buttons */
 button {
-    padding: 12px 24px;
-    background-color: #007bff;
-    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
     border: none;
     border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold; /* Make button text bold */
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px); /* Slight lift effect */
+    background-color: #2980b9;
 }
 
-button:active {
-    background-color: #004494;
-    transform: translateY(0); /* Reset lift effect */
+/* Print Button */
+.btn.background {
+    background-color: #2C3E50; 
+    border-color: #2C3E50; 
+    color: #fff;
+    font-size: 1rem; 
+    padding: 10px 20px; 
+    border-radius: 8px; 
+    transition: background-color 0.3s ease;
+    width: 100%; 
+    max-width: 200px; 
 }
 
-/* Responsive design adjustments */
+@media print {
+    /* Hide print button and form when printing */
+    .btn.background, #cv-form {
+        display: none; 
+    }
+
+    /* Ensure the full CV layout is shown in the PDF */
+    body {
+        background-color: white;
+    }
+
+    #cv-template {
+        page-break-inside: avoid;
+    }
+
+    /* Page break for long content */
+    .card {
+        page-break-inside: avoid;
+    }
+}
+
+.btn.background:hover {
+    background-color: #1a242f; 
+}
+
+/* Responsive Design for Button */
 @media (max-width: 768px) {
-    .cv-container {
-        margin: 10px;
+    .btn.background {
+        font-size: 0.9rem; 
+        padding: 8px;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .card-body {
         padding: 15px;
     }
 
-    .myimg {
-        width: 150px;
-        height: 150px;
+    #cv-template h1 {
+        font-size: 2rem;
     }
-
-    button {
-        padding: 8px 16px;
-        font-size: 14px;
-    }
-}
-
-/* Print CV button styles */
-#print-cv-button {
-    padding: 12px 24px;
-    background-color: #ff5722; /* Bold color for prominence */
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold; /* Make button text bold */
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
-}
-
-/* Hover effect */
-#print-cv-button:hover {
-    background-color: #e64a19; /* Darker shade for hover effect */
-    transform: translateY(-2px); /* Slight lift effect */
-}
-
-/* Active effect */
-#print-cv-button:active {
-    background-color: #d84315; /* Even darker shade for active state */
-    transform: translateY(0); /* Reset lift effect */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Reduce shadow on click */
 }
